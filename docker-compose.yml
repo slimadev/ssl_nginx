@@ -3,7 +3,7 @@ services:
   backend:
     container_name: backend
     image: crccheck/hello-world
-    
+
   nginx:
     image: nginx:alpine
     restart: unless-stopped
@@ -11,7 +11,7 @@ services:
       - 80:80
       - 443:443
     volumes:
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - backend
     
